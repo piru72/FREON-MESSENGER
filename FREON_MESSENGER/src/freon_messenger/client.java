@@ -7,6 +7,7 @@ package freon_messenger;
 
 import java.io.IOException;
 import javafx.application.Application;
+import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
@@ -21,17 +22,17 @@ import javafx.stage.StageStyle;
  *
  * @author parve
  */
-public class FREON_MESSENGER extends Application {
+public class client extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("server.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("client.fxml"));
         Parent root = loader.load();
 
         Scene scene = new Scene(root);
        
 
-        primaryStage.setTitle("Server");
+        primaryStage.setTitle("Client");
         primaryStage.setScene(scene);
         //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();

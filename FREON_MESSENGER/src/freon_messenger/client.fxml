@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" fx:id="scenePane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #202225;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="freon_messenger.ServerController">
+<AnchorPane id="AnchorPane" fx:id="scenePane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #202225;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="freon_messenger.ClientController">
    <children>
       <Label layoutX="257.0" layoutY="192.0" text="FUCK YOU JAVA" />
       <Button fx:id="sendButton" layoutX="554.0" layoutY="371.0" mnemonicParsing="false" onAction="#sendAction" style="-fx-background-color: #87DE87;" text="Send" />
@@ -19,7 +19,7 @@
          <children>
             <ImageView fitHeight="66.0" fitWidth="64.0" layoutX="63.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Images/parvez.jpg" />
+                  <Image url="@Images/piru72.png" />
                </image>
             </ImageView>
             <Button fx:id="exitButton" layoutX="7.0" layoutY="8.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="64.0" prefWidth="44.0" style="-fx-background-color: #FF8080;" text="X" />

@@ -21,7 +21,7 @@ import javafx.stage.Stage;
  *
  * @author parve
  */
-public class ServerController implements Initializable {
+public class ClientController implements Initializable {
 
     @FXML
     private Button exitButton;
