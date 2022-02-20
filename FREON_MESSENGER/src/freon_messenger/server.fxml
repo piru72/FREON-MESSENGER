@@ -1,11 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171">
+<AnchorPane id="AnchorPane" fx:id="scenePane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #202225;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="freon_messenger.ServerController">
    <children>
       <Label layoutX="257.0" layoutY="192.0" text="FUCK YOU JAVA" />
+      <Button fx:id="sendButton" layoutX="554.0" layoutY="371.0" mnemonicParsing="false" onAction="#sendAction" style="-fx-background-color: #87DE87;" text="Send" />
+      <Pane layoutX="2.0" layoutY="2.0" prefHeight="76.0" prefWidth="593.0" style="-fx-background-color: #2F3136;">
+         <children>
+            <ImageView fitHeight="66.0" fitWidth="64.0" layoutX="63.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/parvez.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="exitButton" layoutX="7.0" layoutY="8.0" mnemonicParsing="false" onAction="#exitAction" prefHeight="64.0" prefWidth="44.0" style="-fx-background-color: #FF8080;" text="X" />
+            <Label layoutX="145.0" layoutY="14.0" text="Parvez Ahammed" textFill="WHITE" />
+            <Label layoutX="145.0" layoutY="40.0" text="Active Now" textFill="WHITE" />
+            <ImageView fitHeight="94.0" fitWidth="54.0" layoutX="392.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/call.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="94.0" fitWidth="54.0" layoutX="453.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/video_call.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="94.0" fitWidth="54.0" layoutX="514.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/search.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <ScrollPane hbarPolicy="NEVER" layoutX="4.0" layoutY="87.0" prefHeight="277.0" prefWidth="593.0" style="-fx-background-color: #36393F;" vbarPolicy="ALWAYS" vmax="2.0" vvalue="0.43">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="276.0" prefWidth="572.0" style="-fx-background-color: #36393F; -fx-border-color: #36393F;">
+               <children>
+                  <TextArea fx:id="textArea" layoutX="59.0" layoutY="50.0" prefHeight="171.0" prefWidth="479.0" />
+               </children></AnchorPane>
+        </content>
+      </ScrollPane>
+      <TextField fx:id="textMessage" layoutX="4.0" layoutY="371.0" prefHeight="25.0" prefWidth="541.0" promptText="Type a message" style="-fx-background-color: #40444B;" />
    </children>
 </AnchorPane>
