@@ -5,6 +5,8 @@
  */
 package freon_messenger;
 
+import static freon_messenger.client.dout;
+import static java.lang.System.out;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -55,8 +57,9 @@ public class ClientController implements Initializable {
         try {
             
             String message = textMessage.getText();
-            System.out.println(message);
+            //System.out.println(message);
             textArea.setText(textArea.getText() + "\n\t\t\t" + message);
+            dout.writeUTF(message);
             textMessage.setText("");
         } catch (Exception e) {
             System.out.println("Please handle the exception");

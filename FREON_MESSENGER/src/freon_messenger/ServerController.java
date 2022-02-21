@@ -5,6 +5,7 @@
  */
 package freon_messenger;
 
+import static freon_messenger.Server.dout;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -57,6 +58,7 @@ public class ServerController implements Initializable {
             String message = textMessage.getText();
             System.out.println(message);
             textArea.setText(textArea.getText() + "\n\t\t\t" + message);
+            dout.writeUTF(message);
             textMessage.setText("");
         } catch (Exception e) {
             System.out.println("Please handle the exception");

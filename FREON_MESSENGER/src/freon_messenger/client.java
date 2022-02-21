@@ -5,7 +5,10 @@
  */
 package freon_messenger;
 
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 import java.io.IOException;
+import java.net.Socket;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
@@ -24,13 +27,16 @@ import javafx.stage.StageStyle;
  */
 public class client extends Application {
 
+    static Socket s;
+    static DataInputStream din;
+    static DataOutputStream dout;
+
     @Override
     public void start(Stage primaryStage) throws IOException {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("client.fxml"));
         Parent root = loader.load();
 
         Scene scene = new Scene(root);
-       
 
         primaryStage.setTitle("Client");
         primaryStage.setScene(scene);
@@ -43,6 +49,26 @@ public class client extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+
+        String messageInput = "";
+
+        try {
+
+            s = new Socket("127.0.0.1",6001);
+            //skt = new ServerSocket(6001);
+            //s = skt.accept();
+            din = new DataInputStream(s.getInputStream());
+            dout = new DataOutputStream(s.getOutputStream());
+            messageInput = din.readUTF();
+
+            System.out.println(messageInput);
+            // create a method to pass this texxt to text area
+            //skt.close();
+            s.close();
+
+        } catch (Exception e) {
+            System.out.println("Exception");
+        }
     }
 
 }
